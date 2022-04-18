@@ -32,12 +32,12 @@ window.addEventListener('scroll',
 
 
 
-
+/////////////////////intro string move
 const textShowFnc = (item, text, time) => {
     setTimeout(() => {
         item.innerHTML += text;
     }, 100 * time);
-}
+};
 
 const items = document.querySelectorAll('.event-text');
 // const texts = ['HELLO WORLD', 'do you ready to explore my world?', 'Im ready'];
@@ -50,9 +50,9 @@ for(index in texts) {
         textShowFnc(items[index], texts[index][i], n);
         n += 1;
     }
-}
+};
 
-
+////////////////////intro image event
 const clickEvent = document.querySelector('.text_second');
 const ufoImage = document.querySelector('.ufo_img');
 const ufoLight = document.querySelector('.intro .ufo_img .light');
@@ -72,8 +72,54 @@ clickEvent.addEventListener('mouseenter',()=>{
             arrow.style.display = "block";
         }, 5000);
     }
+});
+
+
+const menuSectionMove = document.querySelectorAll('.section_move');
+const menuDivMove = document.querySelector('.div_move');
+const sectionPart = document.querySelectorAll('section');
+const divPart = document.querySelector('.intro');
+menuSectionMove.forEach(function(item, index){
+    item.addEventListener('click',()=>{
+        for(let k = 0; k <menuSectionMove.length; k++){
+            menuSectionMove[k].classList.remove('active');
+        }
+        menuDivMove.classList.remove('active');
+        
+        menuSectionMove[index].classList.add('active');
+        window.scrollTo(0,sectionPart[index].offsetTop);
+    });
+});
+menuDivMove.addEventListener('click', ()=>{
+    for(let k = 0; k <menuSectionMove.length; k++){
+        menuSectionMove[k].classList.remove('active');
+    }
+    menuDivMove.classList.add('active');
+    window.scrollTo(0,divPart.offsetTop);
 })
 
+
+
+///////////////////pc hover page scroll
+const pcImage = document.querySelectorAll('section .contents .contents__image .tab');
+const divImage = document.querySelectorAll('section .contents .contents__image div');
+
+const timeOut = (item, num, time)=>{
+    setTimeout(()=>{
+        item.style.top = num + 'px';
+    },100*time)
+}
+pcImage.forEach((item, index) => {
+    item.style.top = 0;
+    item.addEventListener('mouseenter',()=>{
+        item.style.top = divImage[index].offsetHeight-item.offsetHeight + 'px';
+        item.style.transitionDuration = 30 + 's';
+    });
+    item.addEventListener('mouseleave',()=>{
+        item.style.top = 0;
+        item.style.transitionDuration = 10 + 's';
+    });
+});
 
 
 //Masgic Scroll------------------------
@@ -86,5 +132,3 @@ spyEls.forEach(function (spyEl) {
     .setClassToggle(spyEl, "show")
     .addTo(new ScrollMagic.Controller());
 });
-
-

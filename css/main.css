@@ -92,7 +92,8 @@
 }
 .intro .intro__icon ul{
     display: flex;
-    position: absolute;
+    position: fixed;
+    z-index: 15;
     top: 20px;
     right: 20px;
 }
@@ -317,9 +318,10 @@ section .contents h2{
     margin-top: 10px;
     position: relative;
 }
-section .contents h2 p{
+section .contents h2 span{
     width: 100%;
     position: absolute;
+    display: block;
     z-index: 2;
 }
 section .contents h2::before{
@@ -361,12 +363,20 @@ section .contents .site li{
     height: 30px;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
     padding-left: 5px;
     background: #E0DBC6;
     box-shadow: 1px 1px 5px #333;
     margin: 5px 0;
     font-size: 0.75em;
+}
+section .contents .site li a{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+section .contents .site li.pc, section .contents .site li.tab{
+    display: none;
 }
 section .plant{
     position: absolute;
@@ -508,21 +518,40 @@ section .bg-eclipse img{
     right: 2%;
 }
 
-/* ---------------responsive--------------- */
-.responsive .contents .contents__image div{
+/* ---------------responsive2--------------- */
+.responsive1 .contents .contents__image div{
     background: #333;
 }
-.responsive .bg-eclipse{
+.responsive1 .bg-eclipse{
     height: 40vh;
     top: 20%;
 }
-.responsive .bg-eclipse img{
+.responsive1 .bg-eclipse img{
+    width: 200%;
+    transform: rotate(-30deg);
+    margin-left: -80%;
+}
+.responsive1 .plant1{
+    width: 140px;
+    top: 10%;
+    left: 40%;
+}
+
+/* ---------------responsive2--------------- */
+.responsive2 .contents .contents__image div{
+    background: #333;
+}
+.responsive2 .bg-eclipse{
+    height: 40vh;
+    top: 20%;
+}
+.responsive2 .bg-eclipse img{
     max-width: none;
     width: 200%;
     transform: rotate(10deg);
     margin-left: -30%;
 }
-.responsive .plant1{
+.responsive2 .plant1{
     width: 150px;
     top: 13%;
     left: 60%;
@@ -646,14 +675,14 @@ section .bg-eclipse img{
     font-size: 2.5em;
     text-align: center;
     position: absolute;
-    bottom: 550px;
+    bottom: 400px;
 }
 .profile .profile__site{
     width: 300px;
     display: flex;
     flex-wrap: wrap;
     position: absolute;
-    bottom: 100px;
+    bottom: 150px;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -662,8 +691,52 @@ section .bg-eclipse img{
     width: 100%;
     height: 100px;
     margin: 1px;
-    border: 2px solid #000;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #333;
+    position: relative;
 }
+.profile .profile__site a span{
+    margin: 0 5px;
+    transition: all 0.5s;
+    position: relative;
+    z-index: 1;
+    color: #ccc;
+}
+.profile .profile__site a .material-icons{
+    display: none;
+    position: relative;
+    z-index: 1;
+    color: #ccc;
+}
+.profile .profile__site a:hover .move{
+    color: #333;
+}
+.profile .profile__site a:hover .material-icons{
+    display: block;
+    font-size: 2em;
+    color: #333;
+}
+.profile .profile__site a::after {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    height: 490%;
+    width: 140%;
+    background: #78c7d2;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+    transform: translateX(-98%) translateY(-25%) rotate(45deg);
+}
+.profile .profile__site a:hover::after {
+    -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
 
 
 /* ---------------section wave-effect--------------- */
@@ -820,6 +893,9 @@ section .bg-eclipse img{
         margin: 70px 0;
         right: -20px;
     }
+    section .contents .site li.tab{
+        display: flex;
+    }
     section .bg-eclipse{
         top: 0;
     }
@@ -841,25 +917,47 @@ section .bg-eclipse img{
     }
     .clone .contents .contents__image div img{
         width: 150%;
+        position: relative;
+        transition: top linear;
     }
-    .clone .contents h2, .responsive .contents h2{
+    .clone .contents h2, 
+    .responsive1 .contents h2,
+    .responsive2 .contents h2{
         padding-left: 250px;
     }
-    .clone .contents h2::before, .responsive .contents h2::before{
+    .clone .contents h2::before, 
+    .responsive1 .contents h2::before,
+    .responsive2 .contents h2::before{
         left: 250px;
     }
-    .clone .contents .text, .responsive .contents .text{
+    .clone .contents .text, 
+    .responsive1 .contents .text,
+    .responsive2 .contents .text{
         padding-left: 250px;
     }
-    .clone .contents .info, .responsive .contents .info{
+    .clone .contents .info, 
+    .responsive1 .contents .info,
+    .responsive2 .contents .info{
         padding-left: 250px;
     }
-    .responsive .bg-eclipse img{
+    .responsive1 .bg-eclipse img{
+        width: 200%;
+        transform: rotate(-10deg);
+        margin-left: -80%;
+    }
+    .responsive1 .contents .contents__image div img{
+        width: 130%;
+        position: relative;
+        transition: top linear;
+    }
+    .responsive2 .bg-eclipse img{
         width: 150%;
         margin-left: -30%;
     }
-    .responsive .contents .contents__image div img{
+    .responsive2 .contents .contents__image div img{
         width: 130%;
+        position: relative;
+        transition: top linear;
     }
     
 
@@ -885,6 +983,7 @@ section .bg-eclipse img{
     }
     .profile .profile__site{
         width: 600px;
+        bottom: 200px;
     }
     .profile .profile__site a{
         width: 49%;
@@ -895,7 +994,35 @@ section .bg-eclipse img{
     .pc{
         display: block;
     }
-
+    .dot_menu{
+        position: fixed;
+        z-index: 10;
+        left: 0px;
+        top: 40%;
+    }
+    .dot_menu div{
+        width: 20px;
+        height: 2px;
+        background: #828282;
+        margin: 20px 10px;
+        position: relative;
+        cursor: pointer;
+    }
+    .dot_menu div.active{
+        width: 30px;
+        background: #FFD4A0;
+    }
+    .dot_menu div span{
+        width: 100px;
+        position: absolute;
+        top: -5px;
+        right: -110px;
+        font-size: 0.613em;
+        display: none;
+    }
+    .dot_menu div:hover span{
+        display: block;
+    }
     /* */
     .intro{
         background: #3E3D51 url(../images/intro/starBg_mobile.png) 30% fixed;
@@ -958,12 +1085,14 @@ section .bg-eclipse img{
     section .contents .info{
         height: 10%;
     }
-
     section .contents .site{
         height: 500px;
         right: 50px;
         margin: 0;
         padding: 70px 0;
+    }
+    section .contents .site li.pc{
+        display: flex;
     }
     section .contents .contents__image div{
         width: 710px;
@@ -987,21 +1116,30 @@ section .bg-eclipse img{
         left: 780px
     }
 
-    .clone .contents h2, .responsive .contents h2{
+    .clone .contents h2, 
+    .responsive1 .contents h2,
+    .responsive2 .contents h2{
         padding-left: 40px;
     }
-    .clone .contents h2::before, .responsive .contents h2::before{
+    .clone .contents h2::before, 
+    .responsive1 .contents h2::before,
+    .responsive2 .contents h2::before{
         left: 40px;
     }
-    .clone .contents .text, .responsive .contents .text{
+    .clone .contents .text, 
+    .responsive1 .contents .text,
+    .responsive2 .contents .text{
         padding-left: 40px;
     }
-    .clone .contents .info, .responsive .contents .info{
+    .clone .contents .info, 
+    .responsive1 .contents .info,
+    .responsive2 .contents .info{
         padding-left: 40px;
     }
 
     .clone .contents .site,
-    .responsive .contents .site{
+    .responsive1 .contents .site,
+    .responsive2 .contents .site{
         justify-content: flex-start;
     }
 
