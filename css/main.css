@@ -25,13 +25,24 @@
     opacity: 0;
     transition: all 0.5s;
 }
+/* ////////menu mobile, tab//////// */
 .menu .menu__button{
     width: 70px;
     position: fixed;
-    top: 15px;
-    left: 30px;
+    top: 5px;
+    left: 10px;
     z-index: 10;
     cursor: pointer;
+    background: url(../images/intro/UFO2.png) no-repeat center 0px;
+    background-size: contain;
+}
+.menu .menu__button img:nth-child(1){
+    animation: opacityChange 2s infinite;
+}
+@keyframes opacityChange{
+    0% {opacity: 0;}
+    50% {opacity: 100;}
+    100% {opacity: 0;}
 }
 .menu .menu__contents{
     width: 100%;
@@ -90,6 +101,7 @@
     background-size: contain;
     position: relative;
 }
+/* ////////blog, git icon//////// */
 .intro .intro__icon ul{
     display: flex;
     position: fixed;
@@ -142,6 +154,7 @@
     justify-content: flex-end;
     z-index: 5;
 }
+/* ////////intro text//////// */
 .intro .intro__text h1{
     font-size: 2.5em;
     height: 47px;
@@ -149,6 +162,7 @@
 .intro .intro__text .text_first{
     margin: 15px 0;
 }
+/* ////////intro text btn//////// */
 .intro .intro__text .text_second{
     width: 130px;
     height: 40px;
@@ -175,6 +189,7 @@
 .intro .intro__text h1.finish::after, .intro .intro__text .text_first.finish::after{
     content: "";
 }
+/* ////////intro bg move effect//////// */
 .intro .total-planet{
     width: 50%;
     max-width: 408px;
@@ -190,7 +205,7 @@
     position: relative;
     z-index: 5;
 }
-.intro .stone1{
+.stone1{
     position: absolute;
     width: 30%;
     max-width: 200px;
@@ -202,6 +217,7 @@
     50%{transform: translateY(10px);}
     100%{transform: translateY(0);}
 }
+/* ////////intro ufo effect//////// */
 .intro .total-planet .ufo_img{
     position: absolute;
     display: none;
@@ -435,6 +451,12 @@ section .bg-eclipse img{
     top: 10%;
     right: 5%;
 }
+.react2 .contents .contents__image div img{
+    margin-top: 0px;
+}
+.react2 .contents .contents__image div{
+    background: #fff;
+}
 
 /* ---------------javascript1--------------- */
 .javascript1 .bg-eclipse{
@@ -574,6 +596,7 @@ section .bg-eclipse img{
     width: 200%;
     transform: rotate(10deg);
 }
+/* ////////profile medal//////// */
 .profile .medal{
     width: 300px;
     height: 500px;
@@ -583,6 +606,7 @@ section .bg-eclipse img{
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 5;
     margin: auto;
 }
 .profile .medal .front, .profile .medal .back{
@@ -677,6 +701,7 @@ section .bg-eclipse img{
     position: absolute;
     bottom: 400px;
 }
+/* ////////profile site//////// */
 .profile .profile__site{
     width: 300px;
     display: flex;
@@ -736,7 +761,18 @@ section .bg-eclipse img{
     -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
     transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }
-
+/* ////////profile bg//////// */
+.profile .stone1{
+    top: 20%
+}
+.profile .stone2{
+    width: 25%;
+    max-width: 200px;
+    animation: upDown 2s ease-in-out infinite;
+    position: absolute;
+    top: 55%;
+    right: 10%;
+}
 
 
 /* ---------------section wave-effect--------------- */
@@ -809,7 +845,10 @@ section .bg-eclipse img{
     .mobile{
         display: none;
     }
-    .intro .stone2{
+    .menu .menu__button.mobile{
+        display: block;
+    }
+    .stone2{
         position: absolute;
         top: 40%;
         right: 5%;
@@ -901,6 +940,9 @@ section .bg-eclipse img{
     }
     
 
+    .react1 .contents .contents__image div img{
+        margin-top: -40px;
+    }
     .javascript1 .bg-eclipse img{
         transform: rotate(5deg);
     }
@@ -994,6 +1036,9 @@ section .bg-eclipse img{
     .pc{
         display: block;
     }
+    .menu .menu__button.mobile{
+        display: none;
+    }
     .dot_menu{
         position: fixed;
         z-index: 10;
@@ -1028,7 +1073,7 @@ section .bg-eclipse img{
         background: #3E3D51 url(../images/intro/starBg_mobile.png) 30% fixed;
         background-size: 60%;
     }
-    .intro .stone3{
+    .stone3{
         position: absolute;
         top: 50%;
         left: 15%;
@@ -1036,7 +1081,7 @@ section .bg-eclipse img{
         max-width: 200px;
         animation: upDown 2s ease-in-out infinite;
     }
-    .intro .stone4{
+    .stone4{
         position: absolute;
         top: 15%;
         right: 20%;
