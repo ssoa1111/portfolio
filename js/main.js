@@ -19,13 +19,13 @@ menuButton.addEventListener('click',()=>{
 ////////////////////모바일 탭 메뉴가 스크롤 내려야 보임
 window.addEventListener('scroll',
     _.throttle(function(){
-        if(window.scrollY > 100){
-            gsap.to(menuButton, 0.3, {
+        if(window.scrollY > 150){
+            gsap.to(menuButton, 0.1, {
             opacity : 1,
             display : 'block'
     });
         }else{
-            gsap.to(menuButton, 0.3, {
+            gsap.to(menuButton, 0.1, {
             opacity : 0,
             display : 'none'
     });
@@ -153,13 +153,31 @@ pcImage.forEach((item, index) => {
 });
 
 
+///////////////////profile contact me modal
+const openModal = document.querySelector('.profile .profile__site .open');
+const closeModal1 = document.querySelector('.profile .contact__modal .modal__contents h5');
+const closeModal2 = document.querySelector('.profile .contact__modal .modal__bg');
+const modal = document.querySelector('.profile .contact__modal');
+console.log(modal)
+openModal.addEventListener('click', ()=>{
+    modal.classList.remove('hidden');
+});
+closeModal1.addEventListener('click',()=>{
+    modal.classList.add('hidden');
+});
+closeModal2.addEventListener('click',()=>{
+    modal.classList.add('hidden');
+});
+
+
+
 //Masgic Scroll------------------------
 const spyEls = document.querySelectorAll("section.scroll-spy");
 spyEls.forEach(function (spyEl) {
     new ScrollMagic.Scene({
-       triggerElement: spyEl,
+        triggerElement: spyEl,
         triggerHook: 0.8,
-     })   
+    })   
     .setClassToggle(spyEl, "show")
     .addTo(new ScrollMagic.Controller());
 });
