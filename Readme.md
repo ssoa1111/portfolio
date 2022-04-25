@@ -162,7 +162,20 @@ top의 값이 -이기 때문에 이미지는 위로 올라가게 됩니다. 호�
 ```javascript
 item.style.transitionDuration = 30 + 's';
 ```
-leave가 되면 top값이 0이 되게 하면 duration의 효과로 천천히 위로 올라가게 됩니다.
+leave가 되면 top값이 0이 되게 하면 duration의 효과로 천천히 아래로 내려가게 됩니다.
+```javascript
+pcImage.forEach((item, index) => {
+    item.style.top = 0;
+    item.addEventListener('mouseenter',()=>{
+        item.style.top = divImage[index].offsetHeight-item.offsetHeight + 'px';
+        item.style.transitionDuration = 30 + 's';
+    });
+    item.addEventListener('mouseleave',()=>{
+        item.style.top = 0;
+        item.style.transitionDuration = 10 + 's';
+    });
+});
+```
 
 
 ## Scrollmagic이라는 플러그인을 사용하여 스크롤에 따라 contents의 내용이 자연스럽게 나타나게 하였습니다.
