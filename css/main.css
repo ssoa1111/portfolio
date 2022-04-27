@@ -36,6 +36,7 @@
     background: url(../images/intro/UFO2.png) no-repeat center 0px;
     background-size: contain;
 }
+/* mobile, tab에서 menu의 기본효과(이미지 겹친다음 이미지 하나를 opacity 조정함) */
 .menu .menu__button img:nth-child(1){
     animation: opacityChange 2s infinite;
 }
@@ -44,6 +45,7 @@
     50% {opacity: 100;}
     100% {opacity: 0;}
 }
+/* mobile, tab에서만 보이는 메뉴 눌렀을 때 화면구성 */
 .menu .menu__contents{
     width: 100%;
     height: 100%;
@@ -55,26 +57,9 @@
     display: none;
     transition: all 0.5s;
 }
+/* 메뉴 활성화 되면 부드럽게 나타남 */
 .menu .menu__contents.active{
     display: block;
-    transition: all 0.5s;
-}
-.menu .menu__contents ul{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #F4F1E6;
-}
-.menu .menu__contents ul li{
-    margin: 15px;
-    font-size: 2em;
-    cursor: pointer;
-}
-.menu .menu__contents ul li:hover{
-    color: #E04646;
     transition: all 0.5s;
 }
 .menu .menu__contents.active ul li{
@@ -91,6 +76,27 @@
         opacity: 1;
     }
 }
+/* 메뉴리스트 column정렬 */
+.menu .menu__contents ul{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #F4F1E6;
+}
+.menu .menu__contents ul li{
+    margin: 15px;
+    font-size: 2em;
+    cursor: pointer;
+}
+/* 메뉴 리스트를 호버할 때 효과 */
+.menu .menu__contents ul li:hover{
+    color: #E04646;
+    transition: all 0.5s;
+}
+
 
 
 /* ---------------intro--------------- */
@@ -114,6 +120,7 @@
     position: relative;
     margin-left: 25px;
 }
+/* blog, git의 사각형을 만듦 */
 .intro .intro__icon ul li div{
     width: 100%;
     height: 40px;
@@ -122,13 +129,13 @@
     top: 0;
     right: 0;
 }
+/* 사각형 두 개가 반대방향으로 회전하는 효과 */
 .intro .intro__icon ul li div:nth-child(1){
     animation: Clock 6s forwards infinite;
 }
 .intro .intro__icon ul li div:nth-child(2){
     animation: CounterClock 6s forwards infinite;
 }
-
 @keyframes Clock{
     from{transform: rotate(0);}
     to{transform: rotate(360deg);}
@@ -137,11 +144,14 @@
     from{transform: rotate(45deg);}
     to{transform: rotate(-315deg);}
 }
+/* blog, git글자 세부 조정 */
 .intro .intro__icon ul li p{
     text-align: center;
     font-size: 0.75em;
     margin-top: 12.5px;
 }
+
+/* ////////intro text//////// */
 .intro .intro__text{
     width: 100%;
     height: 150px;
@@ -154,13 +164,18 @@
     justify-content: flex-end;
     z-index: 5;
 }
-/* ////////intro text//////// */
 .intro .intro__text h1{
     font-size: 2.5em;
     height: 47px;
 }
 .intro .intro__text .text_first{
     margin: 15px 0;
+}
+/* intro text에 j커서가 깜빡이는 듯한 효과 */
+.intro .intro__text h1::after, .intro .intro__text .text_first::after{
+    content: "|";
+    color: #fff;
+    animation: flash 1s infinite;
 }
 /* ////////intro text btn//////// */
 .intro .intro__text .text_second{
@@ -176,19 +191,13 @@
     border-top: 2px solid #333;
     border-right: 2px solid #333;
 }
+/* intro text btn 호버효과, 버튼이 눌린 것 같은 효과 */
 .intro .intro__text .text_second:hover{
     color: #E04646;
     box-shadow: 0px 0px 0px #000;
     transform: translate(3px, -3px);
 }
-.intro .intro__text h1::after, .intro .intro__text .text_first::after{
-    content: "|";
-    color: #fff;
-    animation: flash 1s infinite;
-}
-.intro .intro__text h1.finish::after, .intro .intro__text .text_first.finish::after{
-    content: "";
-}
+
 /* ////////intro bg move effect//////// */
 .intro .total-planet{
     width: 50%;
@@ -199,29 +208,32 @@
     right: 0;
     margin: 0 auto;
 }
+/* 행성이 위 아래로 반복 이동하는 효과 */
 .intro .total-planet .planet{
     animation: upDown 3s ease-in-out infinite;
     width: 100%;
     position: relative;
     z-index: 5;
 }
+/* 주변 배경 운석이 위 아래로 반복 이동하는 효과 */
 .stone1{
     position: absolute;
     width: 30%;
     max-width: 200px;
     animation: upDown 2s ease-in-out infinite;
 }
-
 @keyframes upDown{
     0%{transform: translateY(0);}
     50%{transform: translateY(10px);}
     100%{transform: translateY(0);}
 }
+
 /* ////////intro ufo effect//////// */
 .intro .total-planet .ufo_img{
     position: absolute;
     display: none;
 }
+/* javascript에서 active를 주면 최종으로 도착할 위치 */
 .intro .total-planet .ufo_img.active{
     display: block;
     width: 100px;
@@ -230,6 +242,7 @@
     margin-left: -40px;
     animation: move 2s;
 }
+/* ufo 움직이는 애니메이션 효과 */
 @keyframes move{
     0%{top: -80%; left: 30%; width: 0px;}
     50%{top: -40%; left: -10%; width: 150px; transform: skew(20deg);}
@@ -241,6 +254,7 @@
     top: 0;
     z-index: 2;
 }
+/* ufo에서 내려오는 빛 */
 .intro .ufo_img .light{
     width: 30px;
     height: 0;
@@ -250,11 +264,13 @@
     left: 25px;
     visibility: hidden;
 }
+/* javascript에서 active받으면 애니메이션 실행 */
 .intro .ufo_img .light.active{
     visibility: visible;
     height: 100px;
     transition: height 0.6s;
 }
+/* ufo에너 내려오는 사람 */
 .intro .ufo_img .person{
     width: 50px;
     position: absolute;
@@ -262,12 +278,14 @@
     left: 20px;
     visibility: hidden;
 }
+/* javascript에서 active받으면 애니메이션 실행 */
 .intro .ufo_img .person.active{
     visibility: visible;
     top: 90px;
     transition-delay: 1s;
     transition: top 1s;
 }
+/* javascript에서 모든 active가 처리되면 맨 하단에 스크롤하라는 아이콘 스타일링 */
 .intro .material-icons{
     width: 25px;
     display: block;
@@ -283,6 +301,7 @@
 }
 
 /* ---------------section common--------------- */
+/* 모든 section영역 공통사항 */
 section{
     width: 100%;
     height: 100vh;
@@ -291,6 +310,7 @@ section{
     position: relative;
     overflow: hidden;
 }
+/* 모든 section영역의 프로젝트 영역 */
 section .contents{
     width: 300px;
     height: 65vh;
@@ -304,6 +324,7 @@ section .contents{
     display: flex;
     flex-direction: column;
 }
+/* 모든 section영역의 프로젝트 이미지 영역 */
 section .contents .contents__image{
     width: 100%;
     height: 280px;
@@ -311,23 +332,27 @@ section .contents .contents__image{
     border: 2px solid #828282;
     overflow: hidden;
 }
+/* 모든 section영역의 프로젝트 이미지 영역안의 경계영역 */
 section .contents .contents__image div{
     height: 280px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+/* 모든 section영역의 프로젝트 이미지*/
 section .contents .contents__image div img{
     width: 100%;
     margin: auto;
     max-width: none;
 }
+/* 모든 section영역의 프로젝트의 텍스트*/
 section .contents .contents__text{
     height: 35%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
+/* 모든 section영역의 프로젝트의 제목*/
 section .contents h2{
     height: 20%;
     font-size: 1.75em;
@@ -340,6 +365,7 @@ section .contents h2 span{
     display: block;
     z-index: 2;
 }
+/* 모든 section영역의 프로젝트의 제목에 하이라이트 효과 */
 section .contents h2::before{
     content: "";
     display: block;
@@ -352,6 +378,7 @@ section .contents h2::before{
     height: 20px;
     background: #FFD4A0;
 }
+/* 모든 section영역의 프로젝트의 설명 텍스트*/
 section .contents .text{
     height: 50%;
     margin: 10px 0;
@@ -365,6 +392,7 @@ section .contents .info{
     text-align: left;
     padding: 0 20px;
 }
+/* 모든 section영역의 프로젝트의 설명 텍스트*/
 section .contents .site{
     height: 280px;
     display: flex;
@@ -374,6 +402,7 @@ section .contents .site{
     top: 0;
     right: -20px;
 }
+/* 모든 section영역의 프로젝트의 사이트 이동 버튼*/
 section .contents .site li{
     width: 80px;
     height: 30px;
@@ -391,9 +420,11 @@ section .contents .site li a{
     align-items: center;
     justify-content: space-between;
 }
+/* 모든 section영역의 프로젝트의 사이트 이동 버튼 중에 pc, tab버튼 숨김*/
 section .contents .site li.pc, section .contents .site li.tab{
     display: none;
 }
+/* 모든 section영역의 배경 소품(꾸미기용)*/
 section .plant{
     position: absolute;
     z-index: 2;
@@ -415,6 +446,7 @@ section .bg-eclipse img{
 .react1{
     background: #3E3D51;
 }
+/* 배경 타원형 위치 조정 */
 .react1 .bg-eclipse{
     height: 80vh;
     top: auto;
@@ -422,6 +454,7 @@ section .bg-eclipse img{
     background: url(../images/section_react1/eclipseBg.png) no-repeat;
     background-size: cover;
 }
+/* 배경 소품 위치조정 */
 .react1 .plant{
     width: 150px;
     position: absolute;
@@ -430,6 +463,7 @@ section .bg-eclipse img{
 }
 
 /* ---------------react2--------------- */
+/* 배경 타원형 위치 조정 */
 .react2 .bg-eclipse{
     height: 40vh;
 }
@@ -437,6 +471,7 @@ section .bg-eclipse img{
     width: 250%;
     margin-left: -80%;
 }
+/* 배경 소품 위치조정 */
 .react2 .plant{
     position: absolute;
     z-index: 2;
@@ -451,6 +486,7 @@ section .bg-eclipse img{
     top: 10%;
     right: 5%;
 }
+/* 프로젝트 이미지가 영역의 상단에 일치하게 조정 */
 .react2 .contents .contents__image div img{
     margin-top: 0px;
 }
@@ -459,6 +495,7 @@ section .bg-eclipse img{
 }
 
 /* ---------------javascript1--------------- */
+/* 배경 타원형 위치 조정 */
 .javascript1 .bg-eclipse{
     height: 30vh;
 }
@@ -467,9 +504,11 @@ section .bg-eclipse img{
     transform: rotate(15deg);
     margin-left: -30%;
 }
+/* 이미지의 여백을 #fff으로 처리 */
 .javascript1 .contents .contents__image div{
     background: #fff;
 }
+/* 배경 소품 위치조정 */
 .javascript1 .mershroom1{
     width: 100px;
     top: 10%;
@@ -477,6 +516,7 @@ section .bg-eclipse img{
 }
 
 /* ---------------javascript2--------------- */
+/* 배경 타원형 위치 조정 */
 .javascript2 .bg-eclipse{
     height: 40vh;
 }
@@ -485,9 +525,11 @@ section .bg-eclipse img{
     transform: rotate(-20deg);
     margin-left: -70%;
 }
+/* 이미지의 여백을 #fff으로 처리 */
 .javascript2 .contents .contents__image div{
     background: #fff;
 }
+/* 배경 소품 위치조정 */
 .javascript2 .mershroom1{
     width: 130px;
     top: 10%;
@@ -495,9 +537,7 @@ section .bg-eclipse img{
 }
 
 /* ---------------javascript3--------------- */
-.javascript3 .contents .contents__image div{
-    background: #fff;
-}
+/* 배경 타원형 위치 조정 */
 .javascript3 .bg-eclipse{
     height: 40vh;
 }
@@ -505,6 +545,11 @@ section .bg-eclipse img{
     width: 150%;
     margin-left: -30%;
 }
+/* 이미지의 여백을 #fff으로 처리 */
+.javascript3 .contents .contents__image div{
+    background: #fff;
+}
+/* 배경 소품 위치조정 */
 .javascript3 .mershroom1{
     width: 80px;
     top: 13%;
@@ -517,9 +562,7 @@ section .bg-eclipse img{
 }
 
 /* ---------------clone--------------- */
-.clone .contents .contents__image div{
-    background: #1E3932;
-}
+/* 배경 타원형 위치 조정 */
 .clone .bg-eclipse{
     height: 40vh;
     top: 20%;
@@ -529,6 +572,11 @@ section .bg-eclipse img{
     transform: rotate(-30deg);
     margin-left: -80%;
 }
+/* 이미지의 여백을 #1E3932 처리 */
+.clone .contents .contents__image div{
+    background: #1E3932;
+}
+/* 배경 소품 위치조정 */
 .clone .plant1{
     width: 120px;
     top: 8%;
@@ -541,9 +589,7 @@ section .bg-eclipse img{
 }
 
 /* ---------------responsive2--------------- */
-.responsive1 .contents .contents__image div{
-    background: #333;
-}
+/* 배경 타원형 위치 조정 */
 .responsive1 .bg-eclipse{
     height: 40vh;
     top: 20%;
@@ -553,6 +599,11 @@ section .bg-eclipse img{
     transform: rotate(-30deg);
     margin-left: -80%;
 }
+/* 이미지의 여백을 #333 처리 */
+.responsive1 .contents .contents__image div{
+    background: #333;
+}
+/* 배경 소품 위치조정 */
 .responsive1 .plant1{
     width: 140px;
     top: 10%;
@@ -560,9 +611,7 @@ section .bg-eclipse img{
 }
 
 /* ---------------responsive2--------------- */
-.responsive2 .contents .contents__image div{
-    background: #333;
-}
+/* 배경 타원형 위치 조정 */
 .responsive2 .bg-eclipse{
     height: 40vh;
     top: 20%;
@@ -573,6 +622,11 @@ section .bg-eclipse img{
     transform: rotate(10deg);
     margin-left: -30%;
 }
+/* 이미지의 여백을 #333 처리 */
+.responsive2 .contents .contents__image div{
+    background: #333;
+}
+/* 배경 소품 위치조정 */
 .responsive2 .plant1{
     width: 150px;
     top: 13%;
@@ -586,6 +640,7 @@ section .bg-eclipse img{
     background: #3E3D51 url(../images/intro/starBg_mobile.png) center -50px fixed;
     background-size: 150%;
 }
+/* 프로필 위에 상단 타원 배경 */
 .profile .bg-eclipse{
     width: 500px;
     height: 50px;
@@ -609,6 +664,7 @@ section .bg-eclipse img{
     z-index: 5;
     margin: auto;
 }
+/* medal 앞 뒤 공통사항 */
 .profile .medal .front, .profile .medal .back{
     width: 300px;
     height: 500px;
@@ -623,6 +679,7 @@ section .bg-eclipse img{
     flex-direction: column;
     padding: 20px;
 }
+/* 프로필 내 이미지 */
 .profile .medal .front .my-img{
     height: 50%;
     display: flex;
@@ -634,6 +691,7 @@ section .bg-eclipse img{
     border-radius: 50%;
     border: 1px solid #ccc;
 }
+/* 프로필 기본 정보 */
 .profile .medal .front .basic-info{
     height: 40%;
     line-height: 2.5;
@@ -643,11 +701,13 @@ section .bg-eclipse img{
     text-align: right;
     color: #828282;
 }
+/* 프로필 뒷면 skill, license, history 스타일링 */
 .profile .medal .back h3{
     font-size: 1.5em;
     text-transform: uppercase;
     margin-bottom: 10px;
 }
+/* 프로필 뒷면 skill 스타일링 */
 .profile .medal .back .skill{
     height: 25%;
     margin-top: 10px;
@@ -661,12 +721,14 @@ section .bg-eclipse img{
     font-size: 0.75em;
     line-height: 2;
 }
+/* 프로필 뒷면 license 스타일링 */
 .profile .medal .back .license table{
     width: 90%;
     height: 25%;
     font-size: 0.75em;
     line-height: 2;
 }
+/* 프로필 뒷면 history 스타일링 */
 .profile .medal .back .history{
     height: 35%;
     margin-bottom: 10px;
@@ -676,20 +738,24 @@ section .bg-eclipse img{
     font-size: 0.75em;
     line-height: 2;
 }
+/* 메달 앞면 겹치기 */
 .profile .medal .front{
     transform: rotateY(0deg);
     justify-content: space-between;
 }
+/* 메달 앞면 호버 */
 .profile .medal:hover .front{
     transform: rotateY(-180deg);
 }
 .profile .medal:hover .front .more{
     color: #E04646;
 }
+/* 메달 뒷면 겹치기 */
 .profile .medal .back{
     transform: rotateY(-180deg);
     justify-content: space-between;
 }
+/* 메달 뒷면 호버 */
 .profile .medal:hover .back{
     transform: rotateY(0deg);
 }
@@ -701,7 +767,9 @@ section .bg-eclipse img{
     position: absolute;
     bottom: 400px;
 }
+
 /* ////////profile site//////// */
+/* 이력서 다운, 팝업창 버튼 */
 .profile .profile__site{
     width: 300px;
     display: flex;
@@ -730,6 +798,7 @@ section .bg-eclipse img{
     z-index: 1;
     color: #ccc;
 }
+/* 버튼 호버하면 아이콘이 나타나기 위해 기본 아이콘 스타일링 */
 .profile .profile__site a .material-icons{
     display: none;
     position: relative;
@@ -739,11 +808,13 @@ section .bg-eclipse img{
 .profile .profile__site a:hover .move{
     color: #333;
 }
+/* 버튼 호버하면 아이콘이 나타남 */
 .profile .profile__site a:hover .material-icons{
     display: block;
     font-size: 2em;
     color: #333;
 }
+/* 버튼 호버하면 버튼의 배경에 나타나는 효과 */
 .profile .profile__site a::after {
     content: "";
     position: absolute;
@@ -761,7 +832,9 @@ section .bg-eclipse img{
     -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
     transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }
+
 /* ////////profile modal//////// */
+/* contact me를 누르면 나오는 팝업창 */
 .profile .contact__modal{
     width: 100%;
     height: 1500px;
@@ -779,6 +852,7 @@ section .bg-eclipse img{
     padding: 15px;
     border: 2px solid #fff;
 }
+/* 테이블 태그로 내용 작성 */
 .profile .contact__modal .modal__contents table{
     line-height: 1.8;
     font-size: 0.875em;
@@ -799,6 +873,7 @@ section .bg-eclipse img{
 .profile .contact__modal .modal__contents h5:hover{
     color: #ccc;
 }
+/* 팝업창 실행 시 배경 검은색 */
 .profile .contact__modal .modal__bg{
     width: 100%;
     height: 100%;
@@ -824,6 +899,7 @@ section .bg-eclipse img{
 
 
 /* ---------------section wave-effect--------------- */
+/* 전체 section 웨이브효과 */
 .waves {
     position:absolute;
     top: 0%;
@@ -863,39 +939,37 @@ section .bg-eclipse img{
   }
   
 
-
+/* 전체 section 스크롤에 따른 텍스트 나타나는 효과 */
 .back-to-position{
     opacity: 0;
     transition: 1s;
 }
-/* .back-to-position.to-right{
-    transform: translateX(-150px);
-}
-.back-to-position.to-left{
-    transform: translateX(150px);
-} */
 .show .back-to-position{
     opacity: 1;
     transform: translateY(0);
 }
-/* .back-to-position.to-bottom{
-    transform: translateY(-200px);
-} */
 .show .back-to-position.delay-0{transition-delay: 0.6s;}
 .show .back-to-position.delay-1{transition-delay: 0.9s;}
 .show .back-to-position.delay-2{transition-delay: 1.2s;}
 
 
+/* 768px 이상 미디어 쿼리*/
 @media all and (min-width: 768px){
+    /* 탭에서 보이는 부분 보이게 함 */
     .tab{
         display: block;
     }
+    /* 모바일에서만 보이는 부분 숨기기 */
     .mobile{
         display: none;
     }
+    /* 메뉴의 mobile버튼은 tab도 해당이므로 보이게 */
     .menu .menu__button.mobile{
         display: block;
     }
+    /* 배경 운석 추가 
+    intro, profile section에 해당하는 내용
+    */
     .stone2{
         position: absolute;
         top: 40%;
@@ -905,15 +979,18 @@ section .bg-eclipse img{
         animation: upDown 2.5s ease-in-out infinite;
     }
 
+    /* ---------------section common---------------*/
     section{
         height: 900px;
     }
+    /* tab에서 모든 section 영역 프로젝트 영역 */
     section .contents{
         width: 700px;
         height: 700px;
         text-align: left;
         bottom: 0;
     }
+    /* tab에서 모든 section 영역 프로젝트 이미지(tablet UI 배경) */
     section .contents .contents__image{
         width: 700px;
         background: url(../images/section_common/tab_img.png) no-repeat center center;
@@ -923,6 +1000,7 @@ section .bg-eclipse img{
         display: flex;
         align-items: center;
     }
+    /* 실제 이미지가 넘치지 않게 영역 지정 */
     section .contents .contents__image div{
         width: 610px;
         height: 340px;
@@ -930,6 +1008,7 @@ section .bg-eclipse img{
         border-radius: 5px;
         overflow: hidden;
     }
+    /* tab에서 모든 section 영역 프로젝트 이미지(mobile UI 배경) */
     section .contents .contents__image2{
         width: 200px;
         height: 350px;
@@ -942,6 +1021,7 @@ section .bg-eclipse img{
         align-items: center;
         justify-content: center;
     }
+    /* 실제 이미지가 넘치지 않게 영역 지정 */
     section .contents .contents__image2 div{
         width: 140px;
         height: 270px;
@@ -956,15 +1036,18 @@ section .bg-eclipse img{
         margin: auto;
         max-width: none;
     }
+    /* tab에서 모든 section 영역 프로젝트 제목 */
     section .contents h2{
         font-size: 2em;
         padding-left: 40px;
     }
+    /* tab에서 모든 section 영역 프로젝트 제목 하이라이트 효과 */
     section .contents h2::before{
         width: 30%;
         margin: 0;
         left: 40px;
     }
+    /* tab에서 모든 section 영역 프로젝트 설명 텍스트 */
     section .contents .contents__text{
         height: 25%;
     }
@@ -975,41 +1058,82 @@ section .bg-eclipse img{
     section .contents .info{
         padding-left: 40px;
     }
+    /* tab에서 모든 section 영역 프로젝트 사이트 이동 버튼 */
     section .contents .site{
         height: 310px;
         margin: 70px 0;
         right: -20px;
     }
+    /* tab에서 모든 section 영역 프로젝트 사이트 이동 버튼 중 tab버튼 보이게 */
     section .contents .site li.tab{
         display: flex;
     }
+    /* tab에서 모든 section 영역 타원 배경 */
     section .bg-eclipse{
         top: 0;
     }
     
-
+    /* ---------------react1---------------*/
+    /* 프로젝트 이미지 위치 조정 */
     .react1 .contents .contents__image div img{
         margin-top: -40px;
     }
+    /* ---------------javascript1---------------*/
+    /* 타원형 배경 스타일링 */
     .javascript1 .bg-eclipse img{
         transform: rotate(5deg);
     }
+    /* 프로젝트 이미지 크기 조정 */
     .javascript1 .contents .contents__image div img{
         width: 60%;
     }
+    /* ---------------javascript2---------------*/
+    /* 타원형 배경 스타일링 */
     .javascript2 .bg-eclipse img{
         transform: rotate(0deg);
     }
+    /* ---------------clone---------------*/
+    /* 타원형 배경 스타일링 */
     .clone .bg-eclipse img{
         width: 200%;
         transform: rotate(-10deg);
         margin-left: -80%;
     }
+    /* tab UI의 pc형 프로젝트 이미지를 javascript로 움직이게 할 때 부드럽게 이동하기 위함*/
     .clone .contents .contents__image div img{
         width: 150%;
         position: relative;
         transition: top linear;
     }
+    /* ---------------responsive1---------------*/
+    /* 타원형 배경 스타일링 */
+    .responsive1 .bg-eclipse img{
+        width: 200%;
+        transform: rotate(-10deg);
+        margin-left: -80%;
+    }
+    /* tab UI의 pc형 프로젝트 이미지를 javascript로 움직이게 할 때 부드럽게 이동하기 위함*/
+    .responsive1 .contents .contents__image div img{
+        width: 130%;
+        position: relative;
+        transition: top linear;
+    }
+    /* ---------------responsive2---------------*/
+    /* 타원형 배경 스타일링 */
+    .responsive2 .bg-eclipse img{
+        width: 150%;
+        margin-left: -30%;
+    }
+    /* tab UI의 pc형 프로젝트 이미지를 javascript로 움직이게 할 때 부드럽게 이동하기 위함*/
+    .responsive2 .contents .contents__image div img{
+        width: 130%;
+        position: relative;
+        transition: top linear;
+    }
+
+    /* pc형 홈페이지(모두 반응형 해당)에 mobile화면이 있어 프로젝트 내용의 위치를 변경 
+    clone, responsive 공통사항
+    */
     .clone .contents h2, 
     .responsive1 .contents h2,
     .responsive2 .contents h2{
@@ -1030,27 +1154,6 @@ section .bg-eclipse img{
     .responsive2 .contents .info{
         padding-left: 250px;
     }
-    .responsive1 .bg-eclipse img{
-        width: 200%;
-        transform: rotate(-10deg);
-        margin-left: -80%;
-    }
-    .responsive1 .contents .contents__image div img{
-        width: 130%;
-        position: relative;
-        transition: top linear;
-    }
-    .responsive2 .bg-eclipse img{
-        width: 150%;
-        margin-left: -30%;
-    }
-    .responsive2 .contents .contents__image div img{
-        width: 130%;
-        position: relative;
-        transition: top linear;
-    }
-    
-
     
     /* ---------------profile--------------- */
     .profile{
@@ -1058,6 +1161,7 @@ section .bg-eclipse img{
         background: #3E3D51 url(../images/intro/starBg_mobile.png) fixed;
         background-size: 100%;
     }
+    /* 프로필 상단 타원형 배경 */
     .profile .bg-eclipse{
         width: 1000px;
         height: 50px;
@@ -1068,6 +1172,7 @@ section .bg-eclipse img{
         width: 200%;
         transform: rotate(10deg);
     }
+    /* 프로필 height 조정에 따른 위치 조정 */
     .profile h4{
         bottom: 350px;
     }
@@ -1080,19 +1185,25 @@ section .bg-eclipse img{
     }
 }
 
+/* 1400px 이상 */
 @media all and (min-width: 1400px){
+    /* PC에서 보이는 부분 보이게 함 */
     .pc{
         display: block;
     }
+    /* 모바일, 탭용 메뉴 안 보이게 */
     .menu .menu__button.mobile{
         display: none;
     }
+
+    /* PC 닷메뉴 */
     .dot_menu{
         position: fixed;
         z-index: 10;
         left: 0px;
         top: 40%;
     }
+    /* 닷 메뉴 공통 스타일링 */
     .dot_menu div{
         width: 20px;
         height: 2px;
@@ -1101,10 +1212,12 @@ section .bg-eclipse img{
         position: relative;
         cursor: pointer;
     }
+    /* 닷 메뉴 활성화 되면 나타날 효과 */
     .dot_menu div.active{
         width: 30px;
         background: #FFD4A0;
     }
+    /* 닷 메뉴 옆에 해당 section 이름 나타나도록 함 */
     .dot_menu div span{
         width: 100px;
         position: absolute;
@@ -1116,11 +1229,16 @@ section .bg-eclipse img{
     .dot_menu div:hover span{
         display: block;
     }
-    /* */
+
+    /* ---------------intro---------------*/
+    /* intro 배경이미지 좀 더 촘촘하게 보이게 조정 */
     .intro{
         background: #3E3D51 url(../images/intro/starBg_mobile.png) 30% fixed;
         background-size: 60%;
     }
+    /* 배경 소품 운석3,4 추가
+        intro, profile에 해당
+    */
     .stone3{
         position: absolute;
         top: 50%;
@@ -1138,7 +1256,8 @@ section .bg-eclipse img{
         animation: upDown 3.5s ease-in-out infinite;
     }
 
-    /*  */
+    /* ---------------section common---------------*/
+    /* section 프로젝트 영역 공통사항 */
     section .contents{
         flex-direction: row;
         flex-wrap: wrap;
@@ -1148,17 +1267,20 @@ section .bg-eclipse img{
         bottom: 0;
         margin: auto;
     }
+    /* PC에서 모든 section 영역 프로젝트 이미지(tablet UI 배경) */
     section .contents .contents__image{
         order: 2;
         width: 60%;
         height: 100%;
         margin: auto;
     }
+    /* PC에서 모든 section 영역 프로젝트 이미지(mobile UI 배경) */
     section .contents .contents__image2{
         left: auto;
         bottom: -100px;
         right: 20px;
     }
+    /* 모든 section 프로젝트 텍스트 */
     section .contents .contents__text{
         order: 1;
         width: 30%;
@@ -1166,33 +1288,42 @@ section .bg-eclipse img{
         margin: auto;
         justify-content: center;
     }
+    /* 모든 section 프로젝트 제목 */
     section .contents h2{
         height: 10%;
     }
+    /* 모든 section 프로젝트 제목 하이라이트 */
     section .contents h2::before{
         width: 50%;
     }
+    /* 모든 section 프로젝트 설명 텍스트 */
     section .contents .text{
         height: 20%;
     }
     section .contents .info{
         height: 10%;
     }
+    /* 모든 section 프로젝트 사이트 이동 버튼 */
     section .contents .site{
         height: 500px;
         right: 50px;
         margin: 0;
         padding: 70px 0;
     }
+    /* 모든 section 프로젝트 사이트 이동 버튼 중 PC버튼 보이게 함 */
     section .contents .site li.pc{
         display: flex;
     }
+    /* 프로젝트 이미지 영역 크기 조정 */
     section .contents .contents__image div{
         width: 710px;
         height: 390px;
         border-radius: 10px;
     }
     
+    /* javascript1, javascript2, javascript3
+    프로젝트 이미지와 프로젝트 텍스트 위치를 전환
+    */
     .javascript1 .contents .contents__image,
     .javascript2 .contents .contents__image,
     .javascript3 .contents .contents__image{
@@ -1209,6 +1340,7 @@ section .bg-eclipse img{
         left: 780px
     }
 
+    /* clone, responsive1,2 프로젝트 텍스트 위치 변경 */
     .clone .contents h2, 
     .responsive1 .contents h2,
     .responsive2 .contents h2{
@@ -1229,13 +1361,13 @@ section .bg-eclipse img{
     .responsive2 .contents .info{
         padding-left: 40px;
     }
-
     .clone .contents .site,
     .responsive1 .contents .site,
     .responsive2 .contents .site{
         justify-content: flex-start;
     }
 
+    /* 프로필 배경의 좀 더 촘촘하게 보이게 조정 */
     .profile{
         background: #3E3D51 url(../images/intro/starBg_mobile.png) 30% fixed;
         background-size: 60%;

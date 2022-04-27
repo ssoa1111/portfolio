@@ -43,11 +43,14 @@
 <body>
 	<div id="wrap">
 		<!-- ///////////menu/////////// -->
+		<!-- mobile, tab에서만 보이는 menu -->
 		<div class="menu">
+			<!-- 버튼 -->
 			<div class="menu__button mobile">
 				<img src="images/intro/UFO.png" alt="ufo">
 				<img src="images/intro/UFO2.png" alt="ufo" class="hidden">
 			</div>
+			<!-- 메뉴화면구성 -->
 			<div class="menu__contents">
 				<ul>
 					<li>HOME</li>
@@ -58,6 +61,7 @@
 				</ul>
 			</div>
 		</div>
+		<!-- pc에서만 보이는 menu -->
 		<div class="dot_menu pc">
 			<div class="section_move"><span>HOME</span></div>
 			<div class="section_move"><span>REACT1</span></div>
@@ -71,8 +75,10 @@
 			<div class="section_move"><span>PROFILE</span></div>
 		</div>
 
+
 		<!-- ///////////intro/////////// -->
 		<section class="intro">
+			<!-- 상단 blog, git 아이콘 -->
 			<div class="intro__icon">
 				<ul>
 					<li><a href="https://flowerofashes.tistory.com/category/WEB" target="_blank">
@@ -87,13 +93,16 @@
 					</a></li>
 				</ul>
 			</div>
+			<!-- intro에 나타나는 text자리(javascript로 구현함) -->
 			<div class="intro__text">
 				<h1 class="event-text"></h1>
 				<p class="text_first event-text"></p>
 				<p class="text_second">I&#39;m ready!</p>
 			</div>
+			<!-- intro의 행성이미지 영역-->
 			<div class="total-planet">
 				<img src="images/intro/planet.png" alt="planet" class="planet">
+				<!-- intro ufo 영역 행성이미지 위치에 맞게 배치하기 위함 -->
 				<div class="ufo_img">
 					<img src="images/intro/UFO.png" alt="ufo" class="ufo">
 					<div class="light"></div>
@@ -101,22 +110,28 @@
 				</div>
 			</div>
 			
+			<!-- intro 배경소품 -->
 			<img src="images/intro/stone.png" alt="stone" class="stone stone1">
 			<img src="images/intro/stone2.png" alt="stone" class="stone stone2 tab">
 			<img src="images/intro/stone2.png" alt="stone" class="stone stone3 pc">
 			<img src="images/intro/stone.png" alt="stone" class="stone stone4 pc">
+			<!-- intro모든 애니메이션 끝나면 화면하단에 스크롤 표시를 위한 아이콘 -->
 			<span class="material-icons">double_arrow</span>
 		</section>
 
 
-
 		<!-- ///////////react1/////////// -->
 		<section class="react1 scroll-spy">
+			<!-- 타원형 배경 -->
 			<div class="bg-eclipse"></div>
+			<!-- 프로젝트 영역 -->
 			<div class="contents">
+				<!-- 프로젝트 이미지 -->
 				<div class="contents__image">
+					<!-- 태블릿UI(모든 화면에서 보여지는용) -->
 					<div><img src="images/sectiong_partImg/react1_mobile.png" alt="todolist"></div>
 				</div>
+				<!-- 프로젝트 텍스트 -->
 				<div class="contents__text">
 					<h2 class="back-to-position delay-0"><span>To Do List</span></h2>
 					<p class="text back-to-position delay-1">React의 hook을 활용하여 To do List를 작성하였습니다.</p>
@@ -125,12 +140,14 @@
 						PERIOD : 22.04.19 ~ 22.04.20 <br>
 						WORK : 100%
 					</span>
+					<!-- 사이트 이동 버튼 -->
 					<ul class="site">
 						<li><a href="https://ssoa1111.github.io/todolist/" target="_blank">SITE<span class="material-icons">arrow_right_alt</span></a></li>
 						<li><a href="https://github.com/ssoa1111/todolist" target="_blank">GIT<span class="material-icons">arrow_right_alt</span></a></li>
 					</ul>
 				</div>
 			</div>
+			<!-- 배경소품(식물) -->
 			<div class="bg-item">
 				<img src="images/section_common/plant.png" alt="plant" class="plant">
 			</div>
@@ -139,14 +156,19 @@
 
 		<!-- ///////////react2/////////// -->
 		<section class="react2 scroll-spy">
+			<!-- 타원형 배경 -->
 			<div class="bg-eclipse">
 				<img src="images/section_common/eclipseBg_mobile.png" alt="bg-eclipse" class="mobile">
 				<img src="images/section_common/eclipseBg_tab.png" alt="bg-eclipse" class="tab">
 			</div>
+			<!-- 프로젝트 영역 -->
 			<div class="contents">
+				<!-- 프로젝트 이미지 -->
 				<div class="contents__image">
+					<!-- 태블릿UI(모든 화면에서 보여지는용) -->
 					<div><img src="images/sectiong_partImg/react2_mobile.png" alt="darkmode"></div>
 				</div>
+				<!-- 프로젝트 텍스트 -->
 				<div class="contents__text">
 					<h2 class="back-to-position delay-0"><span>DarkMode</span></h2>
 					<p class="text back-to-position delay-1">React의 hook을 활용하여 화면의 모드가 전환되도록 제작하였습니다.</p>
@@ -155,17 +177,20 @@
 						PERIOD : 22.04.11 ~ 22.04.12 <br>
 						WORK : 100%
 					</span>
+					<!-- 사이트 이동 버튼 -->
 					<ul class="site">
 						<li><a href="https://ssoa1111.github.io/darkmode/" target="_blank">SITE<span class="material-icons">arrow_right_alt</span></a></li>
 						<li><a href="https://github.com/ssoa1111/darkmode" target="_blank">GIT<span class="material-icons">arrow_right_alt</span></a></li>
 					</ul>
 				</div>
 			</div>
+			<!-- 배경소품(식물) -->
 			<div class="bg-item">
 				<img src="images/section_common/plant.png" alt="plant" class="plant plant1">
 				<img src="images/section_common/plant.png" alt="plant" class="plant plant2">
 			</div>
 		
+			<!-- 배경소품(웨이브) -->
 			<svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 			viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
 			<defs>
@@ -183,14 +208,19 @@
 
 		<!-- ///////////javascript1/////////// -->
 		<section class="javascript1 scroll-spy">
+			<!-- 타원형 배경 -->
 			<div class="bg-eclipse">
 				<img src="images/section_common/eclipseBg_mobile.png" alt="bg-eclipse" class="mobile">
 				<img src="images/section_common/eclipseBg_tab.png" alt="bg-eclipse" class="tab">
 			</div>
+			<!-- 프로젝트 영역 -->
 			<div class="contents">
+				<!-- 프로젝트 이미지 -->
 				<div class="contents__image">
+					<!-- 태블릿UI(모든 화면에서 보여지는용) -->
 					<div><img src="images/sectiong_partImg/javascript1_mobile.png" alt="가위바위보"></div>
 				</div>
+				<!-- 프로젝트 텍스트 -->
 				<div class="contents__text">
 					<h2 class="back-to-position delay-0"><span>가위바위보 게임</span></h2>
 					<p class="text back-to-position delay-1">JavaScript를 사용하여 버튼을 통한 <br>
@@ -200,15 +230,18 @@
 						PERIOD : 22.03.03 ~ 22.03.04 <br>
 						WORK : 100%
 					</span>
+					<!-- 사이트 이동 버튼 -->
 					<ul class="site">
 						<li><a href="https://flowerofashes.tistory.com/26" target="_blank">BLOG<span class="material-icons">arrow_right_alt</span></a></li>
 					</ul>
 				</div>
 			</div>
+			<!-- 배경소품(식물) -->
 			<div class="bg-item">
 				<img src="images/section_common/meshroom2.png" alt="plant" class="plant mershroom1">
 			</div>
 
+			<!-- 배경소품(웨이브) -->
 			<svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 			viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
 			<defs>
@@ -226,15 +259,19 @@
 
 		<!-- ///////////javascript2/////////// -->
 		<section class="javascript2 scroll-spy">
+			<!-- 타원형 배경 -->
 			<div class="bg-eclipse">
 				<img src="images/section_common/eclipseBg_mobile.png" alt="bg-eclipse" class="mobile">
 				<img src="images/section_common/eclipseBg_tab.png" alt="bg-eclipse" class="tab">
 			</div>
+			<!-- 프로젝트 영역 -->
 			<div class="contents">
+				<!-- 프로젝트 이미지 -->
 				<div class="contents__image">
+					<!-- 태블릿UI(모든 화면에서 보여지는용) -->
 					<div><img src="images/sectiong_partImg/javascript2_mobile.png" alt="스페이스 카운터"></div>
 				</div>
-				
+				<!-- 프로젝트 텍스트 -->
 				<div class="contents__text">
 				<h2 class="back-to-position delay-0"><span>스페이스 카운터</span></h2>
 				<p class="text back-to-position delay-1">JavaScript를 사용하여 space의 푸쉬 <br>횟수를 세는 간단한 기능을 작성하였습니다.</p>
@@ -243,15 +280,18 @@
 					PERIOD : 22.03.10 <br>
 					WORK : 100%
 				</span>
+				<!-- 사이트 이동 버튼 -->
 				<ul class="site">
 					<li><a href="https://flowerofashes.tistory.com/29" target="_blank">BLOG<span class="material-icons">arrow_right_alt</span></a></li>
 				</ul>
 			</div>
 			</div>
+			<!-- 배경소품(식물) -->
 			<div class="bg-item">
 				<img src="images/section_common/meshroom2.png" alt="plant" class="plant mershroom1">
 			</div>
 
+			<!-- 배경소품(웨이브) -->
 			<svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 			viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
 			<defs>
@@ -269,14 +309,18 @@
 
 		<!-- ///////////javascript3/////////// -->
 		<section class="javascript3 scroll-spy">
+			<!-- 타원형 배경 -->
 			<div class="bg-eclipse">
 				<img src="images/section_common/eclipseBg_mobile.png" alt="bg-eclipse" class="mobile">
 				<img src="images/section_common/eclipseBg_tab.png" alt="bg-eclipse" class="tab">
 			</div>
+			<!-- 프로젝트 영역 -->
 			<div class="contents">
+				<!-- 프로젝트 이미지 -->
 				<div class="contents__image">
 					<div>이미지공간</div>
 				</div>
+				<!-- 프로젝트 텍스트 -->
 				<div class="contents__text">
 				<h2 class="back-to-position delay-0"><span>타이틀입니다. 준비중</span></h2>
 				<p class="text back-to-position delay-1">내용입니다.</p>
@@ -285,16 +329,19 @@
 					PERIOD : 22.03.03 ~ 22.03.04 <br>
 					WORK : 100%
 				</span>
+				<!-- 사이트 이동 버튼 -->
 				<ul class="site">
 					<li><a href="#" target="_blank">BLOG<span class="material-icons">arrow_right_alt</span></a></li>
 				</ul>
 			</div>
 			</div>
+			<!-- 배경소품(식물) -->
 			<div class="bg-item">
 				<img src="images/section_common/meshroom2.png" alt="plant" class="plant mershroom1">
 				<img src="images/section_common/meshroom2.png" alt="plant" class="plant mershroom2">
 			</div>
 
+			<!-- 배경소품(웨이브) -->
 			<svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 			viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
 			<defs>
@@ -312,19 +359,26 @@
 
 		<!-- ///////////clone/////////// -->
 		<section class="clone scroll-spy">
+			<!-- 타원형 배경 -->
 			<div class="bg-eclipse">
 				<img src="images/section_common/eclipseBg_mobile.png" alt="bg-eclipse" class="mobile">
 				<img src="images/section_common/eclipseBg_tab.png" alt="bg-eclipse" class="tab">
 			</div>
+			<!-- 프로젝트 영역 -->
 			<div class="contents">
+				<!-- 프로젝트 이미지 -->
 				<div class="contents__image">
+					<!-- 태블릿UI(모든 화면에서 보여지는용) -->
 					<div><img src="images/sectiong_partImg/clone_mobile.png" alt="clone-coding" class="mobile">
 					<img src="images/sectiong_partImg/cloneCoding_pc.png" alt="clone-coding" class="tab">
 					</div>
 				</div>
+				<!-- 프로젝트 이미지 -->
 				<div class="contents__image2 tab">
+					<!-- 모바일UI(tab, pc 보여지는 용) -->
 					<div><img src="images/sectiong_partImg/clone_tab_mobile.png" alt="clone-coding"></div>
 				</div>
+				<!-- 프로젝트 텍스트 -->
 				<div class="contents__text">
 				<h2 class="back-to-position delay-0"><span>Clone Coding</span></h2>
 				<p class="text back-to-position delay-1">Starbucks의 페이지를 실제와 동일하게 <br>
@@ -334,6 +388,7 @@
 					PERIOD : 22.03.17 ~ 22.03.22<br>
 					WORK : 100%
 				</span>
+				<!-- 사이트 이동 버튼 -->
 				<ul class="site">
 					<li class="pc"><a href="https://ssoa1111.github.io/starbucks/" target="_blank"  onclick="window.open(this.href, '_blank', 'width=1300, height=1024, top=20, left=400, scrollbars=yes, resizable=yes'); return false;">PC<span class="material-icons">arrow_right_alt</span></a></li>
 					<li class="tab"><a href="https://ssoa1111.github.io/starbucks/" target="_blank" onclick="window.open(this.href, '_blank', 'width=768, height=1024, top=20, left=400, scrollbars=yes, resizable=yes'); return false;" >TAB<span class="material-icons">arrow_right_alt</span></a></li>
@@ -342,11 +397,13 @@
 				</ul>
 				</div>
 			</div>
+			<!-- 배경소품(식물) -->
 			<div class="bg-item">
 				<img src="images/section_common/plant2.png" alt="plant" class="plant plant1">
 				<img src="images/section_common/plant2.png" alt="plant" class="plant plant2 tab">
 			</div>
 
+			<!-- 배경소품(웨이브) -->
 			<svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 			viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
 			<defs>
@@ -364,19 +421,26 @@
 
 		<!-- ///////////responsive1/////////// -->
 		<section class="responsive1 scroll-spy">
+			<!-- 타원형 배경 -->
 			<div class="bg-eclipse">
 				<img src="images/section_common/eclipseBg_mobile.png" alt="bg-eclipse" class="mobile">
 				<img src="images/section_common/eclipseBg_tab.png" alt="bg-eclipse" class="tab">
 			</div>
+			<!-- 프로젝트 영역 -->
 			<div class="contents">
+				<!-- 프로젝트 이미지 -->
 				<div class="contents__image">
+					<!-- 태블릿UI(모든 화면에서 보여지는용) -->
 					<div><img src="images/sectiong_partImg/responsive2_mobile.png" alt="서울와인" class="mobile">
 					<img src="images/sectiong_partImg/responsive2_pc.png" alt="서울와인" class="tab">
 					</div>
 				</div>
+				<!-- 프로젝트 이미지 -->
 				<div class="contents__image2 tab">
+					<!-- 모바일UI(tab, pc 보여지는 용) -->
 					<div><img src="images/sectiong_partImg/responsive2_tab_mobile.png" alt="responsive"></div>
 				</div>
+				<!-- 프로젝트 텍스트 -->
 				<div class="contents__text">
 				<h2 class="back-to-position delay-0"><span>Responsive1</span></h2>
 				<p class="text back-to-position delay-1">‘캔들웍스’이라는 웹페이지를 리뉴얼하면서 <br>
@@ -387,6 +451,7 @@
 					PERIOD : 22.04.15 ~ 22.04.18 <br>
 					WORK : 100%
 				</span>
+				<!-- 사이트 이동 버튼 -->
 				<ul class="site">
 					<li class="pc"><a href="https://ssoa1111.github.io/candleworks/" target="_blank"  onclick="window.open(this.href, '_blank', 'width=1400, height=1024, top=20, left=400, scrollbars=yes, resizable=yes'); return false;">PC<span class="material-icons">arrow_right_alt</span></a></li>
 					<li class="tab"><a href="https://ssoa1111.github.io/candleworks/" target="_blank" onclick="window.open(this.href, '_blank', 'width=768, height=1024, top=20, left=400, scrollbars=yes, resizable=yes'); return false;" >TAB<span class="material-icons">arrow_right_alt</span></a></li>
@@ -395,10 +460,12 @@
 				</ul>
 				</div>
 			</div>
+			<!-- 배경소품(식물) -->
 			<div class="bg-item">
 				<img src="images/section_common/plant2.png" alt="plant" class="plant plant1">
 			</div>
 
+			<!-- 배경소품(웨이브) -->
 			<svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 			viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
 			<defs>
@@ -415,19 +482,26 @@
 
 		<!-- ///////////responsive2/////////// -->
 		<section class="responsive2 scroll-spy">
+			<!-- 타원형 배경 -->
 			<div class="bg-eclipse">
 				<img src="images/section_common/eclipseBg_mobile.png" alt="bg-eclipse" class="mobile">
 				<img src="images/section_common/eclipseBg_tab.png" alt="bg-eclipse" class="tab">
 			</div>
+			<!-- 프로젝트 영역 -->
 			<div class="contents">
+				<!-- 프로젝트 이미지 -->
 				<div class="contents__image">
+					<!-- 태블릿UI(모든 화면에서 보여지는용) -->
 					<div><img src="images/sectiong_partImg/responsive_mobile.png" alt="서울와인" class="mobile">
 					<img src="images/sectiong_partImg/responsive_pc.png" alt="서울와인" class="tab">
 					</div>
 				</div>
+				<!-- 프로젝트 이미지 -->
 				<div class="contents__image2 tab">
+					<!-- 모바일UI(tab, pc 보여지는 용) -->
 					<div><img src="images/sectiong_partImg/responsive_tab_mobile.png" alt="responsive"></div>
 				</div>
+				<!-- 프로젝트 텍스트 -->
 				<div class="contents__text">
 				<h2 class="back-to-position delay-0"><span>Responsive2</span></h2>
 				<p class="text back-to-position delay-1">‘서울와인’이라는 웹페이지를 리뉴얼하면서 <br>
@@ -439,6 +513,7 @@
 					PERIOD : 22.03.04 ~ 22.03.15 <br>
 					WORK : 100%
 				</span>
+				<!-- 사이트 이동 버튼 -->
 				<ul class="site">
 					<li class="pc"><a href="https://ssoa1111.github.io/seoulwine/" target="_blank"  onclick="window.open(this.href, '_blank', 'width=1400, height=1024, top=20, left=400, scrollbars=yes, resizable=yes'); return false;">PC<span class="material-icons">arrow_right_alt</span></a></li>
 					<li class="tab"><a href="https://ssoa1111.github.io/seoulwine/" target="_blank" onclick="window.open(this.href, '_blank', 'width=768, height=1024, top=20, left=400, scrollbars=yes, resizable=yes'); return false;" >TAB<span class="material-icons">arrow_right_alt</span></a></li>
@@ -447,10 +522,12 @@
 				</ul>
 				</div>
 			</div>
+			<!-- 배경소품(식물) -->
 			<div class="bg-item">
 				<img src="images/section_common/plant2.png" alt="plant" class="plant plant1">
 			</div>
 
+			<!-- 배경소품(웨이브) -->
 			<svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 			viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
 			<defs>
@@ -468,13 +545,18 @@
 
 		<!-- ///////////profile/////////// -->
 		<section class="profile">
+			<!-- 타원형 배경 -->
 			<div class="bg-eclipse">
 				<img src="images/section_common/eclipseBg_mobile.png" alt="bg-eclipse" class="mobile">
 				<img src="images/section_common/eclipseBg_tab.png" alt="bg-eclipse" class="tab">
 			</div>
+			<!-- 프로필 정보 -->
 			<div class="medal">
+				<!-- 앞면 -->
 				<div class="front">
+					<!-- 프로필사진 -->
 					<div class="my-img"><img src="images/profile/myimg.png" alt="profile"></div>
+					<!-- 기본 정보 -->
 					<div class="basic-info">
 						<p>
 							NAME : KIM SEOHA <br>
@@ -485,7 +567,9 @@
 					</div>
 					<div class="more">MORE INFO ></div>
 				</div>
+				<!-- 뒷면 -->
 				<div class="back">
+					<!-- 스킬영역 -->
 					<div class="skill">
 						<h3>skill</h3>
 						<ul class="skill__list">
@@ -501,6 +585,7 @@
 							<li>ILLUSTRATOR</li>
 						</ul>
 					</div>
+					<!-- 자격증영역 -->
 					<div class="license">
 						<h3>license</h3>
 						<table>
@@ -518,6 +603,7 @@
 							</tr>
 						</table>
 					</div>
+					<!-- 연혁 -->
 					<div class="history">
 						<h3>history</h3>
 						<table>
@@ -546,17 +632,23 @@
 				</div>
 			</div>
 
+			<!-- 프로필 하단영역 -->
 			<h4>THANK YOU!</h4>
+			<!-- 버튼 -->
 			<div class="profile__site">
+				<!-- 이력서다운 -->
 				<a href="download_file/resume_kimseoha.docx" download>
 					<span class="move">DOWNLOAD</span>
 					<span class="material-icons">file_download</span>
 					<span class="move">RESUME</span></a>
+				<!-- 팝업창 -->
 				<a href="javascript:void(0)" class="open">
 					<span class="move">CONTACT</span> <span class="move">ME</span>
 					<span class="material-icons">send</span>
 				</a>
 			</div>
+
+			<!-- 팝업창 -->
 			<div class="contact__modal hidden">
 				<div class="modal__contents">
 					<table>
@@ -575,13 +667,15 @@
 					</table>
 					<h5>많 관 부</h5>
 				</div>
+				<!-- 팝업 열리면 배경 검은색, 다른요소 클릭방지 -->
 				<div class="modal__bg"></div>
 			</div>
+
+			<!-- 배경소품 -->
 			<img src="images/intro/stone.png" alt="stone" class="stone stone1">
 			<img src="images/intro/stone2.png" alt="stone" class="stone stone2">
 			<img src="images/intro/stone2.png" alt="stone" class="stone stone3 pc">
 			<img src="images/intro/stone.png" alt="stone" class="stone stone4 pc">
-
 		</section>
 	</div>
 </body>
