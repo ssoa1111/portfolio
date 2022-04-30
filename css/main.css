@@ -506,7 +506,7 @@ section .bg-eclipse img{
 }
 /* 이미지의 여백을 #fff으로 처리 */
 .javascript1 .contents .contents__image div{
-    background: #fff;
+    background: #e5e5e5;
 }
 /* 배경 소품 위치조정 */
 .javascript1 .mershroom1{
