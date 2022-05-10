@@ -1087,7 +1087,8 @@ section .bg-eclipse img{
     /* ---------------react1---------------*/
     /* 프로젝트 이미지 위치 조정 */
     .react1 .contents .contents__image div img{
-        margin-top: -40px;
+        margin-top: -50px;
+        width: 102%;
     }
     /* ---------------javascript1---------------*/
     /* 타원형 배경 스타일링 */
