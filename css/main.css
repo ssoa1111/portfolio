@@ -426,6 +426,10 @@ section .contents .site li a{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-weight: bold;
+}
+section .contents .site li a:hover{
+    color: #828282;
 }
 /* 모든 section영역의 프로젝트의 사이트 이동 버튼 중에 pc, tab버튼 숨김*/
 section .contents .site li.pc, section .contents .site li.tab{
